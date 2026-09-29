@@ -26,7 +26,7 @@ A barcode identifies a product type and does not supply the date on an individua
 
 ## Limitations
 
-- Camera scanning uses the browser `BarcodeDetector` API and works only in supporting browsers on HTTPS or localhost. Manual barcode entry is the fallback.
+- Camera scanning uses ZXing Browser (loaded from unpkg) for broad barcode support, with the native `BarcodeDetector` API as a fallback. Camera access requires HTTPS or localhost and browser permission. If the camera service or internet-hosted ZXing script is unavailable, use manual barcode entry.
 - Product-name search, package photo/OCR, and shared/cloud accounts are not implemented.
 - Allergen declarations can be absent or incomplete. ScanWise does not diagnose illness or determine whether food is safe for a person with an allergy; check the current package.
 - Open Food Facts may be unavailable or have no record for a barcode. A missing record is never filled with invented facts.
